@@ -13,7 +13,7 @@ public class NyPizza extends Pizza {
     private final Size size;
 
     // 필수값
-    public Builder(Size size) {
+    private Builder(Size size) {
       this.size = size;
     }
 
@@ -26,6 +26,10 @@ public class NyPizza extends Pizza {
     protected Builder self() {
       return this;
     }
+  }
+
+  public static Builder builder(Size size) {
+    return new NyPizza.Builder(size);
   }
 
   NyPizza(Builder builder) {
